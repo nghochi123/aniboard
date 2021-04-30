@@ -114,12 +114,14 @@ const data = JSON.parse(`{
 }`).data.Page.media;
 
 export default function testpage() {
+  console.log(data);
     return (
         <div>
           <Layout>
           <Typography variant="h4">Trending Now</Typography>
-            <BannerCard data={data}/>
+            <BannerCard/>
           </Layout>
+          <Slider/>
         </div>
     )
 }
