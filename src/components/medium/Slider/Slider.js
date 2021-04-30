@@ -1,9 +1,10 @@
-import * as React from "react";
-import { useState } from "react";
+import React, {useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {wrap} from 'popmotion';
-import BannerCard from '../BannerCard/BannerCard';
-import * as styles from './Slider.module.css';
+import { Typography } from "@material-ui/core";
+import { Star } from "@material-ui/icons";
+import Tags from "../../small/Tags/Tags";
+import { wrap } from "popmotion";
+import * as styles from "./Slider.module.css";
 
 const variants = {
   enter: (direction) => {
@@ -31,10 +32,9 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-export default function Slider(){
+export default function Slider({ data, hover }) {
   const [[page, direction], setPage] = useState([0, 0]);
-  const images = [1, 2, 3, 4, 5];
-  const imageIndex = wrap(0, images.length, page);
+  const imageIndex = wrap(0, data.length, page);
 
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
@@ -67,7 +67,31 @@ export default function Slider(){
             }
           }}
         >
-          {images[imageIndex]}
+          <motion.img
+            animate={{ scale: hover ? 1.1 : 1 }}
+            className={styles.banner}
+            src={data[imageIndex].bannerImage}
+            alt="image"
+          />
+          <motion.div
+            animate={{ opacity: hover ? 1 : 0 }}
+            className={`${styles.overlay}`}
+          >
+            <div className={styles.overlayItems}>
+              <img
+                src={data[imageIndex].coverImage.medium}
+                alt="img"
+              />
+              <div className={styles.innerText}>
+                <Typography variant="body1" style={{ display: "flex" }}>
+                  <Star style={{ marginRight: "5px" }} />
+                  {data.averageScore}
+                </Typography>
+                <Typography variant="h2">Hello</Typography>
+                <Tags>Hello</Tags>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </AnimatePresence>
       <div className={styles.next} onClick={() => paginate(1)}>
@@ -78,4 +102,4 @@ export default function Slider(){
       </div>
     </>
   );
-};
+}

@@ -24,3 +24,30 @@
   left: 10px;
   transform: scale(-1);
 }
+
+.banner {
+  height: 500px;
+  object-fit: cover;
+  width: 1400px;
+}
+
+.overlay {
+  position: absolute;
+  background-image: linear-gradient(#00000000, #000000);
+  height: 100%;
+  width: 100%;
+  color: #ffffff;
+  display: flex;
+  align-items: flex-end;
+}
+
+.overlayItems {
+  position: relative;
+  display: flex;
+  bottom: 10%;
+  left: 10%;
+}
+
+.innerText {
+  margin: 1.5rem;
+}
