@@ -5,11 +5,11 @@ import {Grid} from '@material-ui/core';
 
 export default function Layout({children}) {
     return (
-        <div>
+        <div style={{margin: '0 1.5rem'}}>
           <div style={{minHeight: '90vh'}}>
             <Header/>
             <Grid container style={{justifyContent: 'center'}}>
-              <Grid item xs={12} md={10} style={{margin: 10}}>
+              <Grid item xs={12} md={10} style={{margin: 10, maxWidth: '1400px'}}>
                 {children}
               </Grid>
             </Grid>

@@ -17,7 +17,7 @@ const Header = (props) => {
   const [search, setSearch] = useState("");
   const [open, setOpen] = useCycle(false, true);
   const [navEnd, setNavEnd] = useState((
-    <Grid item xs={3} sm={4} style={{ display: "flex", justifyContent: "flex-end" }}>
+    <Grid item xs={4} sm={4} style={{ display: "flex", justifyContent: "flex-end" }}>
       <p className={styles.text}>Sign In</p>
       <p className={styles.text}>Sign Up</p>
     </Grid>
@@ -47,7 +47,7 @@ const Header = (props) => {
       setNavEnd(
         <Grid
           item
-          xs={3} sm={4}
+          xs={4} sm={4}
           style={{ display: "flex", justifyContent: "flex-end" }}
         >
           <p className={styles.text}>Account</p>
@@ -79,7 +79,7 @@ const Header = (props) => {
             <MenuToggle toggle={()=>setOpen()}/>
           </motion.nav>
         </Grid>
-        <Grid item xs={7} sm={4}>
+        <Grid item xs={6} sm={4}>
           <FormControl
             fullWidth
             className={styles.search}
