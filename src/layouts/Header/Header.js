@@ -1,18 +1,61 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import {motion, useCycle} from 'framer-motion';
 import {
   Grid,
   TextField,
   FormControl,
-  IconButton,
   InputAdornment,
 } from "@material-ui/core";
-import { Menu, Search } from "@material-ui/icons";
+import { Search } from "@material-ui/icons";
+import {MenuToggle} from '../../components/small/MenuToggle/MenuToggle';
+import Drawer from '../../components/medium/Drawer/Drawer';
 
 import * as styles from "./Header.module.css";
 
 const Header = (props) => {
   const [darkMode, setDarkMode] = useState(false);
   const [search, setSearch] = useState("");
+  const [open, setOpen] = useCycle(false, true);
+  const [navEnd, setNavEnd] = useState((
+    <Grid item xs={3} sm={4} style={{ display: "flex", justifyContent: "flex-end" }}>
+      <p className={styles.text}>Sign In</p>
+      <p className={styles.text}>Sign Up</p>
+    </Grid>
+  ))
+  const sidebar = {
+    open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+      transition: {
+        type: "spring",
+        stiffness: 20,
+        restDelta: 2
+      }
+    }),
+    closed: {
+      clipPath: "circle(30px at 40px 40px)",
+      transition: {
+        delay: 0.2,
+        type: "spring",
+        stiffness: 400,
+        damping: 40
+      }
+    }
+  };
+  useEffect(() => {
+    localStorage.setItem("authed", "true");
+    if (localStorage.getItem("authed") === "true") {
+      setNavEnd(
+        <Grid
+          item
+          xs={3} sm={4}
+          style={{ display: "flex", justifyContent: "flex-end" }}
+        >
+          <p className={styles.text}>Account</p>
+          <p className={styles.text}>Log Out</p>
+        </Grid>
+      );
+    }
+  }, []);
   const inputProps = {
     style: { backgroundColor: "#ffffff" },
     startAdornment: (
@@ -27,12 +70,16 @@ const Header = (props) => {
   return (
     <header className={styles.header}>
       <Grid container spacing={3} style={{ margin: 0 }}>
-        <Grid item xs={4}>
-          <IconButton>
-            <Menu />
-          </IconButton>
+        <Grid item xs={2} sm={4}>
+          <motion.nav initial={false} animate={open ? "open" : "closed"}>
+            <motion.div className={styles.background} variants={sidebar}>
+            <Drawer/>
+
+            </motion.div>
+            <MenuToggle toggle={()=>setOpen()}/>
+          </motion.nav>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={7} sm={4}>
           <FormControl
             fullWidth
             className={styles.search}
@@ -48,12 +95,8 @@ const Header = (props) => {
             />
           </FormControl>
         </Grid>
-        <Grid
-          item
-          xs={4}
-          style={{ display: "flex", justifyContent: "flex-end" }}
-        >
-        </Grid>
+
+        {navEnd}
       </Grid>
     </header>
   );

@@ -1,2 +1,4 @@
-addLocalStorage: Allows you to add an item to localstorage.
-getLocalStorage: Allows you to get an item from localstorage
+Local Storage Functions:
+
+addLocalStorage: Allows you to add an item to localstorage. Accepts a key, and an object.
+getLocalStorage: Allows you to get an item from localstorage. Returns an object.

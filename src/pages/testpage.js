@@ -1,10 +1,12 @@
 import React from 'react'
-import Header from '../layouts/Header/Header';
+import Layout from '../layouts/Layout';
 
 export default function testpage() {
     return (
         <div>
-            <Header/>
+          <Layout>
+            <p>Testing Layout</p>
+          </Layout>
         </div>
     )
 }
