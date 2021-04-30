@@ -25,6 +25,14 @@
   transform: scale(-1);
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  position: relative;
+}
+
 .banner {
   height: 500px;
   object-fit: cover;
@@ -44,8 +52,10 @@
 .overlayItems {
   position: relative;
   display: flex;
+  align-items: center;
   bottom: 10%;
   left: 10%;
+  max-width: 90%;
 }
 
 .innerText {

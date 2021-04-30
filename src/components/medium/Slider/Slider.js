@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Typography } from "@material-ui/core";
 import { Star } from "@material-ui/icons";
@@ -39,7 +39,7 @@ export default function Slider({ data, hover }) {
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
-
+  console.log(data);
   return (
     <>
       <AnimatePresence initial={false} custom={direction}>
@@ -50,6 +50,7 @@ export default function Slider({ data, hover }) {
           initial="enter"
           animate="center"
           exit="exit"
+          style={{position: 'absolute'}}
           transition={{
             x: { type: "spring", stiffness: 300, damping: 30 },
             opacity: { duration: 0.2 },
@@ -67,31 +68,30 @@ export default function Slider({ data, hover }) {
             }
           }}
         >
-          <motion.img
-            animate={{ scale: hover ? 1.1 : 1 }}
-            className={styles.banner}
-            src={data[imageIndex].bannerImage}
-            alt="image"
-          />
-          <motion.div
-            animate={{ opacity: hover ? 1 : 0 }}
-            className={`${styles.overlay}`}
-          >
-            <div className={styles.overlayItems}>
-              <img
-                src={data[imageIndex].coverImage.medium}
-                alt="img"
+            <div className={styles.container}>
+              <motion.img
+                animate={{ scale: hover ? 1.1 : 1 }}
+                className={styles.banner}
+                src={data[imageIndex].bannerImage}
+                alt="image"
               />
-              <div className={styles.innerText}>
-                <Typography variant="body1" style={{ display: "flex" }}>
-                  <Star style={{ marginRight: "5px" }} />
-                  {data.averageScore}
-                </Typography>
-                <Typography variant="h2">Hello</Typography>
-                <Tags>Hello</Tags>
-              </div>
+              <motion.div
+                animate={{ opacity: hover ? 1 : 0 }}
+                className={`${styles.overlay}`}
+              >
+                <div className={styles.overlayItems}>
+                  <img src={data[imageIndex].coverImage.medium} alt="img" height="150px" width="100px"/>
+                  <div className={styles.innerText}>
+                    <Typography variant="body1" style={{ display: "flex" }}>
+                      <Star style={{ marginRight: "5px" }} />
+                      {data[imageIndex].averageScore}
+                    </Typography>
+                    <Typography variant="h2">{data[imageIndex].title.romaji}</Typography>
+                    <Tags>Hello</Tags>
+                  </div>
+                </div>
+              </motion.div>
             </div>
-          </motion.div>
         </motion.div>
       </AnimatePresence>
       <div className={styles.next} onClick={() => paginate(1)}>

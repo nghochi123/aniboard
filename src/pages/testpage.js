@@ -10,7 +10,7 @@ const data = JSON.parse(`{
       "media": [
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx103632-XRXP3uB17FMg.jpg"
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx103632-XRXP3uB17FMg.jpg"
           },
           "averageScore": 69,
           "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/103632-N4ssExnvLw74.jpg",
@@ -20,7 +20,7 @@ const data = JSON.parse(`{
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/nx21-tXMN3Y20PIL9.jpg"
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx21-tXMN3Y20PIL9.jpg"
           },
           "averageScore": 85,
           "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21-wf37VakJmZqs.jpg",
@@ -30,7 +30,7 @@ const data = JSON.parse(`{
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx113950-Yn7h0o1yD61j.jpg"
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx113950-Yn7h0o1yD61j.jpg"
           },
           "averageScore": 67,
           "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/113950-NwcTryOMumKh.jpg",
@@ -40,7 +40,7 @@ const data = JSON.parse(`{
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx117448-bsPgVDD85sjB.jpg"
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx117448-bsPgVDD85sjB.jpg"
           },
           "averageScore": 70,
           "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/117448-zkxeZbaObKUZ.jpg",
@@ -50,7 +50,7 @@ const data = JSON.parse(`{
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx112151-1qlQwPB1RrJe.png"
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx112151-1qlQwPB1RrJe.png"
           },
           "averageScore": 87,
           "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/112151-eHCBz19nf2yC.jpg",
@@ -60,7 +60,7 @@ const data = JSON.parse(`{
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx113415-979nF8TZP2xC.jpg"
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx113415-979nF8TZP2xC.jpg"
           },
           "averageScore": 88,
           "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/113415-jQBSkxWAAk83.jpg",
@@ -70,7 +70,7 @@ const data = JSON.parse(`{
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx11061-sIpBprNRfzCe.png"
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11061-sIpBprNRfzCe.png"
           },
           "averageScore": 90,
           "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/11061-8WkkTZ6duKpq.jpg",
@@ -80,7 +80,7 @@ const data = JSON.parse(`{
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx101922-PEn1CTc93blC.jpg"
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101922-PEn1CTc93blC.jpg"
           },
           "averageScore": 85,
           "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/101922-YfZhKBUDDS6L.jpg",
@@ -90,7 +90,7 @@ const data = JSON.parse(`{
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx119675-ziQ6Lb80zEx4.png"
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx119675-ziQ6Lb80zEx4.png"
           },
           "averageScore": 67,
           "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/119675-7Iiy4tWlKGGd.jpg",
@@ -100,7 +100,7 @@ const data = JSON.parse(`{
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx114535-y3NnjexcqKG1.jpg"
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx114535-y3NnjexcqKG1.jpg"
           },
           "averageScore": 84,
           "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/114535-oEOG8aHBp5dw.jpg",
