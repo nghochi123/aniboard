@@ -1,0 +1,2 @@
+addLocalStorage: Allows you to add an item to localstorage.
+getLocalStorage: Allows you to get an item from localstorage
