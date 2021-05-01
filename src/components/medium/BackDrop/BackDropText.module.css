@@ -1,6 +1,7 @@
 .backdrop {
     color: #fff;
     display: flex;
+    align-items: center;
 }
 .coverimage {
     object-fit: cover;
