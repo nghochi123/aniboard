@@ -16,17 +16,16 @@ export const getServerSideProps = async () => {
   let getTrending;
   const trendQuery = `
   query {
-    Page(page: 1, perPage: 20) {
+    Page(page: 1, perPage: 10) {
       media(type: ANIME, sort:TRENDING_DESC){
-        id
-        status
         coverImage{
-          extraLarge
+          medium
+          large
         }
+        averageScore
         bannerImage
-        title {
-          english
-          native
+        title{
+          romaji
         }
       }
     }

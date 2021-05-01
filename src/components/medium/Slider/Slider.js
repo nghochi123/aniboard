@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Typography } from "@material-ui/core";
-import { Star } from "@material-ui/icons";
+import { Typography, IconButton } from "@material-ui/core";
+import { Star, ChevronLeft, ChevronRight } from "@material-ui/icons";
 import Tags from "../../small/Tags/Tags";
 import { wrap } from "popmotion";
 import * as styles from "./Slider.module.css";
@@ -39,7 +39,6 @@ export default function Slider({ data, hover }) {
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
-  console.log(data);
   return (
     <>
       <AnimatePresence initial={false} custom={direction}>
@@ -95,10 +94,14 @@ export default function Slider({ data, hover }) {
         </motion.div>
       </AnimatePresence>
       <div className={styles.next} onClick={() => paginate(1)}>
-        {"‣"}
+        <IconButton>
+          <ChevronRight/>
+        </IconButton>
       </div>
       <div className={styles.prev} onClick={() => paginate(-1)}>
-        {"‣"}
+        <IconButton>
+          <ChevronLeft/>
+        </IconButton>
       </div>
     </>
   );

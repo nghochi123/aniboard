@@ -2,7 +2,7 @@
 .prev {
   top: calc(50% - 20px);
   position: absolute;
-  background: white;
+  background: #cccccc;
   border-radius: 30px;
   width: 40px;
   height: 40px;
@@ -22,7 +22,6 @@
 
 .prev {
   left: 10px;
-  transform: scale(-1);
 }
 
 .container {
