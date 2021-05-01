@@ -13,7 +13,6 @@ import Drawer from '../../components/medium/Drawer/Drawer';
 import * as styles from "./Header.module.css";
 
 const Header = (props) => {
-  const [darkMode, setDarkMode] = useState(false);
   const [search, setSearch] = useState("");
   const [open, setOpen] = useCycle(false, true);
   const [navEnd, setNavEnd] = useState((

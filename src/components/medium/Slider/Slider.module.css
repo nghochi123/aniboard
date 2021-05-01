@@ -30,12 +30,14 @@
   overflow: hidden;
   border-radius: 1.2rem;
   position: relative;
+  cursor: pointer;
 }
 
 .banner {
   height: 500px;
   object-fit: cover;
   width: 1400px;
+  background-image: url('../../../resources/notfound.jpg');
 }
 
 .overlay {

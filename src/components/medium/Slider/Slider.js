@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useRouter} from 'next/router'
 import { motion, AnimatePresence } from "framer-motion";
 import { Typography, IconButton } from "@material-ui/core";
 import { Star, ChevronLeft, ChevronRight } from "@material-ui/icons";
@@ -35,10 +36,13 @@ const swipePower = (offset, velocity) => {
 export default function Slider({ data, hover }) {
   const [[page, direction], setPage] = useState([0, 0]);
   const imageIndex = wrap(0, data.length, page);
-
+  const router = useRouter();
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
+  const clickHandler = () => {
+    router.push(`/anime/${data[imageIndex].id}`)
+  }
   return (
     <>
       <AnimatePresence initial={false} custom={direction}>
@@ -67,7 +71,7 @@ export default function Slider({ data, hover }) {
             }
           }}
         >
-            <div className={styles.container}>
+            <div className={styles.container} onClick={clickHandler}>
               <motion.img
                 animate={{ scale: hover ? 1.1 : 1 }}
                 className={styles.banner}

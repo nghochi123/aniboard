@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useRouter} from 'next/router'
 import { motion } from "framer-motion";
 import { Typography } from "@material-ui/core";
 import { Star } from "@material-ui/icons";
@@ -7,8 +8,12 @@ import * as styles from "./ScrollCard.module.css";
 
 export default function ScrollCard({data}) {
   const [hover, setHover] = useState(false);
+  const router = useRouter();
+  const clickHandler = () => {
+    router.push(`/anime/${data.id}`)
+  }
   return (
-    <motion.div className={styles.container}>
+    <motion.div className={styles.container} onClick={clickHandler}>
       <motion.img
         className={styles.image}
         onMouseEnter={() => setHover(true)}

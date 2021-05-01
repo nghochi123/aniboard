@@ -1,12 +1,27 @@
 import React from "react";
 import axios from "axios";
 import Layout from '../../layouts/Layout';
+import BackDrop from '../../components/medium/BackDrop/BackDrop';
 
 export default function Anime({ pageData }) {
   console.log(pageData);
   return (
   <Layout>
-    Hello World
+    <BackDrop/>
+    
+    
+    
+    
+    <div>{pageData.title.romaji}</div>
+    <div>{pageData.season}</div>
+    <div>{pageData.seasonYear}</div>
+    <div>{pageData.type}</div>
+    <div>{pageData.format}</div>
+    <div>{pageData.status}</div>
+    <div>{pageData.episodes}</div>
+    <div>{pageData.duration}</div>
+    <div>{pageData.isAdult}</div>
+    <div>{pageData.source}</div>
   </Layout>);
 }
 
@@ -71,6 +86,8 @@ export async function getServerSideProps(context) {
       }
       trailer {
         id
+        site
+        thumbnail
       }
     }
   }
