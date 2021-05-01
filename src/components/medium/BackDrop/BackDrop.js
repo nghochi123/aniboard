@@ -3,6 +3,6 @@ import * as styles from './BackDrop.module.css';
 
 export default function BackDrop({image}) {
     return (
-        <img src={'https://s4.anilist.co/file/anilistcdn/media/anime/banner/16498-8jpFCOcDmneX.jpg'} className={styles.backdrop}/>
+        <div style={{background: `linear-gradient(#00000099, #00000099), url("${image}") no-repeat left top`, backgroundSize: 'cover'}} className={styles.backdrop}/>
     )
 }
