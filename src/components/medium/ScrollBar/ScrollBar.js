@@ -9,13 +9,13 @@ export default function ScrollBar({data}) {
   const scrollRef = useRef();
   const scroll = (pn) => {
       if (!scrollRef.current) return;
-      scrollRef.current.scrollLeft += 500 * pn;
+      scrollRef.current.scrollLeft += 800 * pn;
   };
   return (
     <div className={styles.outerContainer}>
       <motion.div className={styles.scroller} ref={scrollRef}>
         {data.map(item=>(
-            <ScrollCard data={item}/>
+            <ScrollCard key={item.title.romaji} data={item}/>
         ))}
         <motion.div className={styles.more} whileHover={{ scale: 1.2 }}>
           <Add />
