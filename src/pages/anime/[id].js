@@ -2,27 +2,19 @@ import React from "react";
 import axios from "axios";
 import Layout from '../../layouts/Layout';
 import BackDrop from '../../components/medium/BackDrop/BackDrop';
+import BackDropText from '../../components/medium/BackDrop/BackDropText';
 
 export default function Anime({ pageData }) {
-  console.log(pageData);
   return (
-  <Layout>
-    <BackDrop/>
-    
-    
-    
-    
-    <div>{pageData.title.romaji}</div>
-    <div>{pageData.season}</div>
-    <div>{pageData.seasonYear}</div>
-    <div>{pageData.type}</div>
-    <div>{pageData.format}</div>
-    <div>{pageData.status}</div>
-    <div>{pageData.episodes}</div>
-    <div>{pageData.duration}</div>
-    <div>{pageData.isAdult}</div>
-    <div>{pageData.source}</div>
-  </Layout>);
+    <>
+      <BackDrop image={pageData.bannerImage} />
+      <Layout>
+        <BackDropText data={pageData}/>
+
+
+      </Layout>
+    </>
+  );
 }
 
 export async function getServerSideProps(context) {
