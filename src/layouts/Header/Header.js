@@ -6,7 +6,7 @@ import {
   FormControl,
   InputAdornment,
 } from "@material-ui/core";
-import { Search } from "@material-ui/icons";
+import { Search, Home } from "@material-ui/icons";
 import {MenuToggle} from '../../components/small/MenuToggle/MenuToggle';
 import Drawer from '../../components/medium/Drawer/Drawer';
 

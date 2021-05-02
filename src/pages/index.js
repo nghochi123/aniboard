@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout";
 import { Typography } from "@material-ui/core";
 import BannerCard from "../components/medium/BannerCard/BannerCard";
 import ScrollBar from "../components/medium/ScrollBar/ScrollBar";
+import ScrollCard from '../components/medium/ScrollCard/ScrollCard';
 
 const trendingData = JSON.parse(`{
   "data": {
@@ -363,15 +364,27 @@ export default function testpage() {
         <Typography variant="h5" style={{ margin: "1.5rem" }}>
           Currently Popular
         </Typography>
-        <ScrollBar data={popularData} />
+        <ScrollBar>
+        {popularData.map(item=>(
+            <ScrollCard key={item.title.romaji} data={item}/>
+        ))}
+        </ScrollBar>
         <Typography variant="h5" style={{ margin: "1.5rem" }}>
           All time favorites
         </Typography>
-        <ScrollBar data={popularData} />
+        <ScrollBar>
+        {popularData.map(item=>(
+            <ScrollCard key={item.title.romaji} data={item}/>
+        ))}
+        </ScrollBar>
         <Typography variant="h5" style={{ margin: "1.5rem" }}>
           Best rated
         </Typography>
-        <ScrollBar data={popularData} />
+        <ScrollBar>
+        {popularData.map(item=>(
+            <ScrollCard key={item.title.romaji} data={item}/>
+        ))}
+        </ScrollBar>
       </Layout>
     </div>
   );

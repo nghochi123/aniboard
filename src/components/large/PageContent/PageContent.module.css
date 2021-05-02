@@ -1,0 +1,13 @@
+.outercontainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.pagecontent {
+    max-width: 1400px;
+}
+
+.container {
+    margin: 20px;
+}

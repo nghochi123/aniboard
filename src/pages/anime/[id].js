@@ -1,19 +1,18 @@
 import React from "react";
 import axios from "axios";
-import Layout from '../../layouts/Layout';
-import BackDrop from '../../components/medium/BackDrop/BackDrop';
-import BackDropText from '../../components/medium/BackDrop/BackDropText';
+import Header from '../../layouts/Header/Header';
+import Footer from '../../layouts/Footer/Footer'
+import BackDrop from "../../components/medium/BackDrop/BackDrop";
+import PageContent from '../../components/large/PageContent/PageContent';
 
 export default function Anime({ pageData }) {
   return (
-    <>
-      <BackDrop image={pageData.bannerImage} />
-      <Layout>
-        <BackDropText data={pageData}/>
-
-
-      </Layout>
-    </>
+    <div style={{overflow: 'hidden'}}>
+      <Header/>
+      <BackDrop image={pageData.bannerImage} data={pageData}/>
+      <PageContent data={pageData}/>
+      <Footer/>
+    </div>
   );
 }
 
@@ -22,8 +21,15 @@ export async function getServerSideProps(context) {
   const idQuery = `
   query ($id: Int) {
     Media(id: $id, type: ANIME) {
+      description
+      externalLinks{
+        site
+        url
+      }
       title {
         romaji
+        english
+        native
       }
       startDate {
         year
@@ -40,10 +46,35 @@ export async function getServerSideProps(context) {
         large
         medium
       }
+      studios {
+        nodes{
+          name
+        }
+      }
+      recommendations{
+        edges{
+          node{
+            mediaRecommendation{
+              title {
+                romaji
+              }
+              coverImage{
+                medium
+                large
+              }
+              popularity
+              genres
+            }
+          }
+        }
+      }
+      genres
       season
       seasonYear
       type
+      popularity
       format
+      averageScore
       status
       episodes
       duration
@@ -51,6 +82,7 @@ export async function getServerSideProps(context) {
       genres
       tags {
         name
+        rank
       }
       source
       countryOfOrigin

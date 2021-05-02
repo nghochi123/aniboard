@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import {useRouter} from 'next/router'
+import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import { Typography } from "@material-ui/core";
 import { Star } from "@material-ui/icons";
 import Tags from "../../small/Tags/Tags";
 import * as styles from "./ScrollCard.module.css";
 
-export default function ScrollCard({data}) {
+export default function ScrollCard({ data }) {
   const [hover, setHover] = useState(false);
   const router = useRouter();
   const clickHandler = () => {
-    router.push(`/anime/${data.id}`)
-  }
+    router.push(`/anime/${data.id}`);
+  };
   return (
     <motion.div className={styles.container} onClick={clickHandler}>
       <motion.img
@@ -31,7 +31,10 @@ export default function ScrollCard({data}) {
             {data.popularity}
           </Typography>
           <Typography variant="h6">{data.title.romaji}</Typography>
-          <Tags>Hello</Tags>
+          {data.genres.map((genre, index) => {
+            if(index > 1) return;
+            return <Tags>{genre}</Tags>
+          })}
         </div>
       </motion.div>
       <Typography variant="body1">{data.title.romaji}</Typography>

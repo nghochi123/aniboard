@@ -3,9 +3,8 @@ import { IconButton } from "@material-ui/core";
 import { Add, ChevronRight, ChevronLeft } from "@material-ui/icons";
 import { motion } from "framer-motion";
 import * as styles from "./ScrollBar.module.css";
-import ScrollCard from "../ScrollCard/ScrollCard";
 
-export default function ScrollBar({data}) {
+export default function ScrollBar({children}) {
   const scrollRef = useRef();
   const scroll = (pn) => {
       if (!scrollRef.current) return;
@@ -14,9 +13,7 @@ export default function ScrollBar({data}) {
   return (
     <div className={styles.outerContainer}>
       <motion.div className={styles.scroller} ref={scrollRef}>
-        {data.map(item=>(
-            <ScrollCard key={item.title.romaji} data={item}/>
-        ))}
+        {children}
         <motion.div className={styles.more} whileHover={{ scale: 1.2 }}>
           <Add />
           View More
