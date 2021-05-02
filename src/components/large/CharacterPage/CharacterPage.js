@@ -30,12 +30,15 @@ export default function CharacterPage({ data }) {
             </div>
             <div className={styles.container}>
               {data.description.split("\n").map((block) => {
-                if (block.includes("__Zodiac__:")) {
-                  block = block.replace("__Zodiac__:", "");
+                const regex = /__.*__/g;
+                if (block.match(regex)) {
+                  const slice = block.match(regex)[0];
+                  block = block.replace(slice, "");
+                  const replaced = slice.replaceAll('__', '');
                   return (
                     <>
                       <Typography key={block} variant="body2">
-                        <strong>Zodiac:</strong> {block}
+                        <strong>{replaced}</strong> {block}
                       </Typography>
                     </>
                   );

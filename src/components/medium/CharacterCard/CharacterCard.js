@@ -7,7 +7,9 @@ import * as styles from "./CharacterCard.module.css";
 export default function CharacterCard({ character }) {
   const [hover, setHover] = useState(false);
   const router = useRouter();
-  const clickHandler = () => {};
+  const clickHandler = () => {
+    router.push(`/characters/${character.node.id}`);
+  };
   return (
     <motion.div
       className={styles.container}
