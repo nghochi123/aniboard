@@ -3,7 +3,7 @@ import axios from "axios";
 import Header from '../../layouts/Header/Header';
 import Footer from '../../layouts/Footer/Footer'
 import BackDrop from "../../components/medium/BackDrop/BackDrop";
-import PageContent from '../../components/large/PageContent/PageContent';
+import PageContent from '../../components/large/PageContentAnime/PageContent';
 
 export default function Anime({ pageData }) {
   return (
@@ -55,6 +55,7 @@ export async function getServerSideProps(context) {
         edges{
           node{
             mediaRecommendation{
+              id
               title {
                 romaji
               }
@@ -98,6 +99,7 @@ export async function getServerSideProps(context) {
             }
           }
           node {
+            id
             name {
               full
             }

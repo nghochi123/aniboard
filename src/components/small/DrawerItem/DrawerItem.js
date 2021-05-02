@@ -1,26 +1,14 @@
 import React from "react";
 import { ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
-import { motion } from "framer-motion";
-import * as styles from "./DrawerItem.module.css";
+import {useRouter} from 'next/router'
 
-const variants = {
-  open: {
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-};
-
-export default function DrawerItem({ icon, text }) {
+export default function DrawerItem({ icon, text, link }) {
+  const router = useRouter();
+  const clickHandler = (link) => () => {
+    router.push(link)
+  }
   return (
-      <ListItem button>
+      <ListItem button onClick={clickHandler(link)}>
         <ListItemIcon>{icon}</ListItemIcon>
         <ListItemText>{text}</ListItemText>
       </ListItem>

@@ -130,223 +130,175 @@ const popularData = JSON.parse(`{
       "media": [
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx16498-m5ZMNtFioc7j.png",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx16498-m5ZMNtFioc7j.png"
+            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx16498-m5ZMNtFioc7j.png",
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx16498-m5ZMNtFioc7j.png"
           },
-          "popularity": 398647,
+          "popularity": 400015,
           "title": {
             "romaji": "Shingeki no Kyojin"
           },
-          "id": 16498
+          "id": 16498,
+          "genres": [
+            "Action",
+            "Drama",
+            "Fantasy",
+            "Mystery"
+          ]
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/nx21459-oZMZ7JwS5Sxq.jpg",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx21459-oZMZ7JwS5Sxq.jpg"
+            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx21459-oZMZ7JwS5Sxq.jpg",
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/nx21459-oZMZ7JwS5Sxq.jpg"
           },
-          "popularity": 367104,
+          "popularity": 368197,
           "title": {
             "romaji": "Boku no Hero Academia"
           },
-          "id": 21459
+          "id": 21459,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+          ]
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx1535-lawCwhzhi96X.jpg",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1535-lawCwhzhi96X.jpg"
+            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1535-lawCwhzhi96X.jpg",
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx1535-lawCwhzhi96X.jpg"
           },
-          "popularity": 360698,
+          "popularity": 361955,
           "title": {
             "romaji": "Death Note"
           },
-          "id": 1535
+          "id": 1535,
+          "genres": [
+            "Mystery",
+            "Psychological",
+            "Supernatural",
+            "Thriller"
+          ]
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx101922-PEn1CTc93blC.jpg",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101922-PEn1CTc93blC.jpg"
+            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101922-PEn1CTc93blC.jpg",
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx101922-PEn1CTc93blC.jpg"
           },
-          "popularity": 335631,
+          "popularity": 337163,
           "title": {
             "romaji": "Kimetsu no Yaiba"
           },
-          "id": 101922
+          "id": 101922,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Drama",
+            "Fantasy",
+            "Mystery",
+            "Supernatural"
+          ]
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx11061-sIpBprNRfzCe.png",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11061-sIpBprNRfzCe.png"
+            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11061-sIpBprNRfzCe.png",
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx11061-sIpBprNRfzCe.png"
           },
-          "popularity": 333963,
+          "popularity": 335091,
           "title": {
             "romaji": "Hunter x Hunter (2011)"
           },
-          "id": 11061
+          "id": 11061,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/nx11757-Q9P2zjCPICq5.jpg",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx11757-Q9P2zjCPICq5.jpg"
+            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx11757-Q9P2zjCPICq5.jpg",
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/nx11757-Q9P2zjCPICq5.jpg"
           },
-          "popularity": 312015,
+          "popularity": 312813,
           "title": {
             "romaji": "Sword Art Online"
           },
-          "id": 11757
+          "id": 11757,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Romance"
+          ]
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx21087-8WpMBeqsSVx8.png",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21087-8WpMBeqsSVx8.png"
+            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21087-8WpMBeqsSVx8.png",
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx21087-8WpMBeqsSVx8.png"
           },
-          "popularity": 309395,
+          "popularity": 310288,
           "title": {
             "romaji": "One Punch Man"
           },
-          "id": 21087
+          "id": 21087,
+          "genres": [
+            "Action",
+            "Comedy",
+            "Sci-Fi",
+            "Supernatural"
+          ]
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/nx20605-fmnHdfurM7m6.jpg",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx20605-fmnHdfurM7m6.jpg"
+            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx20605-fmnHdfurM7m6.jpg",
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/nx20605-fmnHdfurM7m6.jpg"
           },
-          "popularity": 300867,
+          "popularity": 301826,
           "title": {
             "romaji": "Tokyo Ghoul"
           },
-          "id": 20605
+          "id": 20605,
+          "genres": [
+            "Action",
+            "Drama",
+            "Horror",
+            "Mystery",
+            "Psychological",
+            "Supernatural"
+          ]
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx5114-4CpuT7iWcZ37.png",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx5114-4CpuT7iWcZ37.png"
+            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx5114-4CpuT7iWcZ37.png",
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx5114-4CpuT7iWcZ37.png"
           },
-          "popularity": 298273,
+          "popularity": 299165,
           "title": {
             "romaji": "Hagane no Renkinjutsushi: Fullmetal Alchemist"
           },
-          "id": 5114
+          "id": 5114,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Fantasy"
+          ]
         },
         {
           "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx21856-vX1n54domqjJ.png",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21856-vX1n54domqjJ.png"
+            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21856-vX1n54domqjJ.png",
+            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx21856-vX1n54domqjJ.png"
           },
-          "popularity": 284429,
+          "popularity": 285271,
           "title": {
             "romaji": "Boku no Hero Academia 2"
           },
-          "id": 21856
-        },
-        {
-          "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx20958-HuFJyr54Mmir.jpg",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20958-HuFJyr54Mmir.jpg"
-          },
-          "popularity": 278930,
-          "title": {
-            "romaji": "Shingeki no Kyojin 2"
-          },
-          "id": 20958
-        },
-        {
-          "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx21519-XIr3PeczUjjF.png",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21519-XIr3PeczUjjF.png"
-          },
-          "popularity": 272012,
-          "title": {
-            "romaji": "Kimi no Na wa."
-          },
-          "id": 21519
-        },
-        {
-          "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx20-E3YH5W6sz6H7.jpg",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20-E3YH5W6sz6H7.jpg"
-          },
-          "popularity": 270627,
-          "title": {
-            "romaji": "Naruto"
-          },
-          "id": 20
-        },
-        {
-          "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx101759-NhSwxv7HY9y9.jpg",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101759-NhSwxv7HY9y9.jpg"
-          },
-          "popularity": 270104,
-          "title": {
-            "romaji": "Yakusoku no Neverland"
-          },
-          "id": 101759
-        },
-        {
-          "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/nx20954-RYEF5mWglzV8.png",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx20954-RYEF5mWglzV8.png"
-          },
-          "popularity": 260474,
-          "title": {
-            "romaji": "Koe no Katachi"
-          },
-          "id": 20954
-        },
-        {
-          "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx100166-pypBDoozr2u0.png",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx100166-pypBDoozr2u0.png"
-          },
-          "popularity": 258991,
-          "title": {
-            "romaji": "Boku no Hero Academia 3"
-          },
-          "id": 100166
-        },
-        {
-          "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx113415-979nF8TZP2xC.jpg",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx113415-979nF8TZP2xC.jpg"
-          },
-          "popularity": 257638,
-          "title": {
-            "romaji": "Jujutsu Kaisen"
-          },
-          "id": 113415
-        },
-        {
-          "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx20755-q0b3Ok1cAbPd.jpg",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20755-q0b3Ok1cAbPd.jpg"
-          },
-          "popularity": 257001,
-          "title": {
-            "romaji": "Ansatsu Kyoushitsu"
-          },
-          "id": 20755
-        },
-        {
-          "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx20665-CnzR2zVpdxtR.png",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20665-CnzR2zVpdxtR.png"
-          },
-          "popularity": 253319,
-          "title": {
-            "romaji": "Shigatsu wa Kimi no Uso"
-          },
-          "id": 20665
-        },
-        {
-          "coverImage": {
-            "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx9253-7pdcVzQSkKxT.jpg",
-            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx9253-7pdcVzQSkKxT.jpg"
-          },
-          "popularity": 252961,
-          "title": {
-            "romaji": "Steins;Gate"
-          },
-          "id": 9253
+          "id": 21856,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+          ]
         }
       ]
     }

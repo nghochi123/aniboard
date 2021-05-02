@@ -15,7 +15,7 @@ export default function PageContent({ data }) {
             <Typography variant="h5">Information</Typography>
           </div>
           <div className={styles.container}>
-            <Typography variant="h6">Alternative Titles</Typography>
+            <Typography variant="h6">Other Titles</Typography>
             <Typography variant="body2">EN: {data.title.english}</Typography>
             <Typography variant="body2">JP: {data.title.native}</Typography>
           </div>
@@ -45,7 +45,9 @@ export default function PageContent({ data }) {
           <div className={styles.container}>
             <Typography variant="h6">Studios involved</Typography>
             {data.studios.nodes.map(({ name }) => (
-              <Typography variant="body2">{name}</Typography>
+              <Typography key={name} variant="body2">
+                {name}
+              </Typography>
             ))}
           </div>
           <div className={styles.container}>
@@ -58,14 +60,22 @@ export default function PageContent({ data }) {
             <Typography variant="h6">Tags</Typography>
             {data.tags.map(({ name }, index) => {
               if (index > 9) return;
-              return <Typography variant="body2">{name}</Typography>;
+              return (
+                <Typography key={name} variant="body2">
+                  {name}
+                </Typography>
+              );
             })}
           </div>
           <div className={styles.container}>
             <Typography variant="h6">Links</Typography>
             {data.externalLinks.map(({ site, url }, index) => {
               if (index > 9) return;
-              return <Typography variant="body2"><Link href={url}>{site}</Link></Typography>;
+              return (
+                <Typography key={url} variant="body2">
+                  <Link href={url}>{site}</Link>
+                </Typography>
+              );
             })}
           </div>
         </Grid>
@@ -77,7 +87,9 @@ export default function PageContent({ data }) {
             </Typography>
             {data.description.split("<br>").map((block) => (
               <>
-                <Typography variant="body2">{block}</Typography>
+                <Typography key={block} variant="body2">
+                  {block}
+                </Typography>
                 <br />
               </>
             ))}

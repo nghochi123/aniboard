@@ -25,19 +25,23 @@ const variants = {
 const drawerItems = [
     {
         text: 'Home',
-        icon: <Home/>
+        icon: <Home/>,
+        link: '/'
     },
     {
         text: 'Top Rated',
-        icon: <Star/>
+        icon: <Star/>,
+        link: '/'
     },
     {
         text: 'Popular',
-        icon: <Whatshot/>
+        icon: <Whatshot/>,
+        link: '/'
     },
     {
         text: 'Most Favourited',
-        icon: <Favorite/>
+        icon: <Favorite/>,
+        link: '/'
     }
 ]
 
@@ -47,7 +51,7 @@ export default function Drawer() {
     <motion.div variants={variants}>
       <List component="ul" className={classes.root}>
         {drawerItems.map((item, i) => (
-          <DrawerItem key={i} icon={item.icon} text={item.text} />
+          <DrawerItem key={i} icon={item.icon} text={item.text} link={item.link}/>
         ))}
       </List>
     </motion.div>
