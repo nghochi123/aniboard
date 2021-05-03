@@ -20,3 +20,5 @@ Tech stack used currently include:
 ## Credits
 
 API for the data is taken from [AniList's](https://anilist.co/) [API here](https://anilist.gitbook.io/anilist-apiv2-docs/)
+
+* [Loader](https://codepen.io/tashfene/pen/raEqrJ)

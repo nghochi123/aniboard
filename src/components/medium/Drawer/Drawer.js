@@ -3,7 +3,7 @@ import {
   List,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
-import {Home, Star, Whatshot, Favorite} from "@material-ui/icons";
+import {Home, Star, Whatshot, Favorite, TrendingUp} from "@material-ui/icons";
 import { motion } from "framer-motion";
 import DrawerItem from "../../small/DrawerItem/DrawerItem";
 
@@ -29,20 +29,25 @@ const drawerItems = [
         link: '/'
     },
     {
-        text: 'Top Rated',
-        icon: <Star/>,
-        link: '/'
-    },
-    {
         text: 'Popular',
         icon: <Whatshot/>,
-        link: '/'
+        link: '/sortby/POPULARITY_DESC'
+    },
+    {
+        text: 'Top Rated',
+        icon: <Star/>,
+        link: '/sortby/SCORE_DESC'
+    },
+    {
+        text: 'Trending',
+        icon: <TrendingUp/>,
+        link: '/sortby/TRENDING_DESC'
     },
     {
         text: 'Most Favourited',
         icon: <Favorite/>,
-        link: '/'
-    }
+        link: '/sortby/FAVOURITES_DESC'
+    },
 ]
 
 export default function Drawer() {
