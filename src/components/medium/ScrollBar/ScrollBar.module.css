@@ -5,6 +5,7 @@
 
 .scroller {
   display: flex;
+  width: 100%;
   flex-wrap: nowrap;
   overflow-x: auto;
   position: relative;

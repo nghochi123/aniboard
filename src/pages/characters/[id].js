@@ -5,7 +5,6 @@ import Footer from "../../layouts/Footer/Footer";
 import CharacterPage from "../../components/large/CharacterPage/CharacterPage";
 
 export default function Character({ pageData }) {
-  console.log(pageData);
   return (
     <div style={{ overflow: "hidden" }}>
       <Header />

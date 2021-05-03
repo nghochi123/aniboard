@@ -37,7 +37,7 @@ export default function ScrollCard({ data }) {
           })}
         </div>
       </motion.div>
-      <Typography variant="body1">{data.title.romaji}</Typography>
+      <Typography variant="body1" className={styles.bottomtext}>{data.title.romaji}</Typography>
     </motion.div>
   );
 }
