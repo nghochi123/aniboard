@@ -17,7 +17,7 @@ export default function index({trending, popular, top, favourites }) {
         <Typography variant="h5" style={{ margin: "1.5rem" }}>
           Currently Popular
         </Typography>
-        <ScrollBar>
+        <ScrollBar link={'/sortby/POPULARITY_DESC'}>
           {popular.map((item) => (
             <ScrollCard key={item.title.romaji} data={item} />
           ))}
@@ -25,7 +25,7 @@ export default function index({trending, popular, top, favourites }) {
         <Typography variant="h5" style={{ margin: "1.5rem" }}>
           All time favorites
         </Typography>
-        <ScrollBar>
+        <ScrollBar link={'/sortby/FAVOURITES_DESC'}>
           {favourites.map((item) => (
             <ScrollCard key={item.title.romaji} data={item} />
           ))}
@@ -33,7 +33,7 @@ export default function index({trending, popular, top, favourites }) {
         <Typography variant="h5" style={{ margin: "1.5rem" }}>
           Best rated
         </Typography>
-        <ScrollBar>
+        <ScrollBar link={'/sortby/SCORE_DESC'}>
           {top.map((item) => (
             <ScrollCard key={item.title.romaji} data={item} />
           ))}

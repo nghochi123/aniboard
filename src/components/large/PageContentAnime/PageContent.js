@@ -85,14 +85,16 @@ export default function PageContent({ data }) {
             <Typography variant="h5" style={{ marginBottom: "10px" }}>
               Synopsis
             </Typography>
-            {data.description.split("<br>").map((block) => (
+            {data.description.split("<br>").map((block) => {
+              block = block.replaceAll('!~', '').replaceAll('~!', '').replaceAll('<i>', '').replaceAll('</i>', '');
+              return (
               <>
                 <Typography key={block} variant="body2">
                   {block}
                 </Typography>
                 <br />
               </>
-            ))}
+            )})}
           </div>
           <div className={styles.container}>
             <Typography variant="h5" style={{ marginBottom: "10px" }}>
@@ -100,7 +102,6 @@ export default function PageContent({ data }) {
             </Typography>
             <ScrollBar>
               {data.characters.edges.map((character, index) => {
-                if (index > 9) return;
                 return (
                   <CharacterCard
                     key={character.node.name.full}
@@ -116,7 +117,6 @@ export default function PageContent({ data }) {
             </Typography>
             <ScrollBar>
               {data.recommendations.edges.map((edge, index) => {
-                if (index > 9) return;
                 return (
                   <ScrollCard
                     key={index}
