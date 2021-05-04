@@ -64,7 +64,6 @@ const Header = (props) => {
     }
   }, []);
   const inputProps = {
-    style: { backgroundColor: "#ffffff" },
     startAdornment: (
       <InputAdornment position="start">
         <Search />
