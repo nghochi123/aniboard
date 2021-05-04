@@ -9,17 +9,15 @@ import MyListPage from "../../components/large/MyListPage/MyListPage";
 
 export default function MyList() {
   const router = useRouter();
-  const refresh = () => {
-    router.replace(router.asPath);
-  };
   const [ids, setIds] = useState([]);
   const [cards, setCards] = useState([]);
   const [page, setPage] = useState(3);
   const [nextpage, setnextpage] = useState();
   useEffect(async () => {
+    let idList;
     await axios
       .get("/api/list")
-      .then((res) => setIds(res.data))
+      .then((res) => {idList = res.data;setIds(res.data)})
       .catch((e) => {
         router.push("/account/login");
       });
@@ -44,7 +42,7 @@ export default function MyList() {
       }
       `;
     const variables = {
-      idlist: ids,
+      idlist: idList,
     };
     await axios
       .post(

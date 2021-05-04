@@ -1,5 +1,5 @@
-import React from "react";
-import { List, Divider } from "@material-ui/core";
+import React, { useState, useEffect, useContext } from "react";
+import { List, Divider, Switch, FormControlLabel } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import {
   Home,
@@ -10,7 +10,9 @@ import {
   Book,
 } from "@material-ui/icons";
 import { motion } from "framer-motion";
+import {GlobalStateContext, GlobalDispatchContext} from '../../../context/GlobalContextProvider';
 import DrawerItem from "../../small/DrawerItem/DrawerItem";
+import * as styles from "./Drawer.module.css";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -65,6 +67,20 @@ const drawerItems2 = [
 
 export default function Drawer() {
   const classes = useStyles();
+  const darkMode = useContext(GlobalStateContext).darkMode;
+  const dispatch = useContext(GlobalDispatchContext);
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (theme) {
+      theme === "dark" ? dispatch({type: 'TOGGLE_THEME', payload: true}) : dispatch({type:'TOGGLE_THEME',payload: false})
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }, []);
+  const handleChange = () => {
+    dispatch({type: 'TOGGLE_THEME', payload: !darkMode})
+    localStorage.setItem("theme", !darkMode ? 'dark' : 'light');
+  };
   return (
     <motion.div variants={variants}>
       <List component="ul" className={classes.root}>
@@ -85,6 +101,16 @@ export default function Drawer() {
             link={item.link}
           />
         ))}
+        <Divider />
+        <div className={styles.switch}>
+          <FormControlLabel
+            control={
+              <Switch color="primary" checked={darkMode} onChange={handleChange} />
+            }
+            label="Dark Mode"
+            labelPlacement="start"
+          />
+        </div>
       </List>
     </motion.div>
   );

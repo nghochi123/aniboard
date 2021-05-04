@@ -12,7 +12,7 @@ const reducer = (state, action) => {
         case 'TOGGLE_THEME':
             return {
                 ...state,
-                darkMode: !state.darkMode
+                darkMode: action.payload
             }
         default:
             throw new Error('Illegal Action Type');
