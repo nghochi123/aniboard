@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useRouter } from "next/router";
-import Link from 'next/link'
+import Link from "next/link";
 import Head from "next/head";
 import {
   Button,
@@ -11,7 +11,6 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import validator from "validator";
-import bcrypt from "bcryptjs";
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -34,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 const SignUp = ({ users }) => {
   const router = useRouter();
   const [error, setError] = useState(false);
-  const [userError, setUserError] = useState('');
+  const [userError, setUserError] = useState("");
   const [userField, passwordField, confirmField] = [
     useRef(),
     useRef(),
@@ -53,36 +52,31 @@ const SignUp = ({ users }) => {
       passwordField.current.value,
     ];
     if (!validator.isAlphanumeric(username)) {
-        setUserError('Username must be alphanumeric.')
+      setUserError("Username must be alphanumeric.");
     } else if (!validator.isStrongPassword(password)) {
-        setUserError('Password is not strong enough.')
+      setUserError("Password is not strong enough.");
     } else if (!validator.equals(password, confirmField.current.value)) {
-        setUserError('Passwords do not match.')
-    } 
-    // else if (users.find((user) => user.username === username)) {
-      
-    // } else if (users.find((user) => user.email === email)) {
-      
-    // } 
+      setUserError("Passwords do not match.");
+    }
     else {
-      const hashedPW = await bcrypt.hash(password, 8);
       await axios
-        .post("/api/adduser", { username, email, password: hashedPW })
-        .then((res) => console.log(res))
-        .catch((e) => console.log(e));
-      dispatch({
-        type: "TOGGLE_DIALOG",
-        payload: ["Success", "Your account has been created. Redirecting..."],
-      });
-      await wait(1000);
-      router.push("/login");
-      dispatch({type: 'TOGGLE_DIALOG', payload: ["Success", "Your account has been created. Redirecting..."]});
+        .post("/api/signup", {
+          username,
+          password,
+        })
+        .then((res) => {
+          if(res.data.error){
+            return setUserError("Username has been taken");
+          }
+          router.push("/");
+        })
+        .catch((e) => {
+          setUserError("Something went wrong. The server might be down or you might want to check your fields.");
+        });
     }
   };
   const confirmPassword = () => {
-    if (
-      passwordField.current.value != confirmField.current.value
-    ) {
+    if (passwordField.current.value != confirmField.current.value) {
       setError(true);
     } else {
       setError(false);
@@ -152,7 +146,7 @@ const SignUp = ({ users }) => {
             Sign Up
           </Button>
           <Grid className={classes.pushUp} container justify="space-between">
-          <Grid item>
+            <Grid item>
               <Link href="/" variant="body2">
                 Home
               </Link>

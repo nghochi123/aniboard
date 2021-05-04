@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useRouter } from "next/router";
-import Link from 'next/link'
+import Link from "next/link";
 import Head from "next/head";
 import {
   Button,
@@ -11,8 +11,6 @@ import {
   Container,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -34,8 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 const LogIn = ({ users }) => {
   const classes = useStyles();
-  const [error, setError] = useState('');
-  const JWT_SECRET = process.env.NEXT_PUBLIC_JWT_SECRET;
+  const [error, setError] = useState("");
   const router = useRouter();
   const [userField, passwordField] = [useRef(), useRef()];
   const submitHandler = async (e) => {
@@ -44,34 +41,17 @@ const LogIn = ({ users }) => {
       userField.current.value,
       passwordField.current.value,
     ];
-    const user = users.find((user) => user.username === username);
-    let match;
-    if (user) match = await bcrypt.compare(password, user.password);
-    else setError('Username or password is incorrect.')
-    if (!match) {
-        setError('Username or password is incorrect.')
-    } else {
-      const token = jwt.sign({ username }, JWT_SECRET, {
-        expiresIn: "2 days",
+    await axios
+      .post("/api/signin", {
+        username,
+        password,
+      })
+      .then((res) => {
+        router.push('/');
+      })
+      .catch((e) => {
+        setError("Username or Password is incorrect");
       });
-      const payload = {
-        user_id: user.id,
-        token,
-        expiry_date: new Date(
-          new Date().getTime() + (2 * 24 + 8) * 60 * 60 * 1000
-        )
-          .toISOString()
-          .slice(0, 19)
-          .replace("T", " "),
-      };
-      await axios
-        .post("/api/addtoken", payload)
-        .then((res) => {
-
-        })
-        .catch((e) => console.log(e));
-      router.push("/groups");
-    }
   };
   return (
     <Container
