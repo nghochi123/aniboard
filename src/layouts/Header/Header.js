@@ -57,14 +57,13 @@ const Header = (props) => {
           sm={4}
           style={{ display: "flex", justifyContent: "flex-end" }}
         >
-          <p className={styles.text}>Account</p>
-          <p className={styles.text}>Log Out</p>
+          <p className={styles.text}>.</p>
+          <p className={styles.text}>.</p>
         </Grid>
       );
     }
   }, []);
   const inputProps = {
-    style: { backgroundColor: "#ffffff" },
     startAdornment: (
       <InputAdornment position="start">
         <Search />
@@ -77,7 +76,7 @@ const Header = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     if(search.trim() === '') return;
-    window.open(`/search/${search}`, '_self')
+    router.push(`/search/${search}`)
   };
   return (
     <header className={styles.header}>

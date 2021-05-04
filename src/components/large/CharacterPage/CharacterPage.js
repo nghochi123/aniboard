@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Link } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import ScrollBar from "../../medium/ScrollBar/ScrollBar";
 import ScrollCard from "../../medium/ScrollCard/ScrollCard";
 import * as styles from "./CharacterPage.module.css";
@@ -31,6 +31,7 @@ export default function CharacterPage({ data }) {
             <div className={styles.container}>
               {data.description.split("\n").map((block) => {
                 const regex = /__.*__/g;
+                block = block.replaceAll('!~', '').replaceAll('~!', '').replaceAll('<i>', '');
                 if (block.match(regex)) {
                   const slice = block.match(regex)[0];
                   block = block.replace(slice, "");
