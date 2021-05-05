@@ -21,6 +21,7 @@ export async function getServerSideProps(context) {
   const idQuery = `
   query ($id: Int) {
     Media(id: $id, type: ANIME) {
+      id
       description
       externalLinks{
         site

@@ -1,10 +1,21 @@
-import React from "react";
-import { Typography } from "@material-ui/core";
+import React, {useState} from "react";
+import { Typography, Button } from "@material-ui/core";
+import axios from 'axios';
 import { Star } from "@material-ui/icons";
 import Tags from "../../small/Tags/Tags";
 import * as styles from "./BackDrop.module.css";
 
 export default function BackDrop({ image, data }) {
+  const [disabled, setDisabled] = useState(false);
+  const addHandler = async () => {
+    await axios.post('/api/addtolist', {
+      itemid: data.id
+    }).then(res => {
+      setDisabled(true);
+    }).catch(e=> {
+      console.log(e);
+    })
+  }
   return (
     <div
       style={{
@@ -14,11 +25,16 @@ export default function BackDrop({ image, data }) {
       className={styles.backdrop}
     >
       <div className={styles.innerbackdrop}>
-        <img
-          src={data.coverImage.large}
-          alt="image"
-          className={styles.coverimage}
-        />
+        <div className={styles.imagecontainer}>
+          <img
+            src={data.coverImage.large}
+            alt="image"
+            className={styles.coverimage}
+          />
+          <Button variant="contained" color="primary" style={{marginTop: '20px'}} onClick={addHandler} disabled={disabled}>
+            {disabled ? 'Added to list' : 'Add to list'}
+          </Button>
+        </div>
         <div className={styles.text}>
           <Typography
             variant="body1"

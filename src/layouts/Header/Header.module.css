@@ -4,6 +4,7 @@
   justify-content: space-evenly;
   width: 100%;
   position: absolute;
+  z-index: 1337;
 }
 
 .text {
