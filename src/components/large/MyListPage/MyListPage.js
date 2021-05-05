@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {
   Grid,
   Typography,
@@ -7,6 +7,10 @@ import MyListCard from "../../medium/MyListCard/MyListCard";
 import * as styles from "./MyListPage.module.css";
 
 export default function MyListPage({ data }) {
+  const [pageData, setPageData] = useState(data);
+  useEffect(()=>{
+    setPageData(data);
+  }, [data])
   return (
     <div className={styles.outercontainer}>
       <Grid container className={styles.main}>
@@ -19,10 +23,10 @@ export default function MyListPage({ data }) {
         </Grid>
       </Grid>
       <Grid container className={styles.main}>
-        {data.map((item) => (
+        {pageData.map((item) => (
           <Grid item xs={12} sm={3} md={2}>
             <div style={{ margin: "10px 0" }}>
-              <MyListCard data={item} />
+              <MyListCard data={item} pageData={pageData} setPageData={setPageData}/>
             </div>
           </Grid>
         ))}

@@ -7,22 +7,21 @@ import { Star, Delete } from "@material-ui/icons";
 import Tags from "../../small/Tags/Tags";
 import * as styles from "./MyListCard.module.css";
 
-export default function ScrollCard({ data }) {
+export default function ScrollCard({ data, pageData, setPageData }) {
   const [hover, setHover] = useState(false);
   const [hoverDelete, setHoverDelete] = useState(false);
   const router = useRouter();
-  const refresh = () => {
-    router.replace(router.asPath);
-  };
   const clickHandler = () => {
     router.push(`/anime/${data.id}`);
   };
   const deleteHandler = async () => {
+    const newPageData = pageData.filter(item => item.id !== data.id);
+    setPageData(newPageData);
     await axios
       .post("/api/deletefromlist", {
         itemid: data.id,
       })
-      .then((res) => refresh())
+      .then((res) => res)
       .catch((e) => e);
   };
   return (

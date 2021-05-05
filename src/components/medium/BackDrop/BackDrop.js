@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useRouter} from 'next/router';
 import { Typography, Button } from "@material-ui/core";
 import axios from "axios";
 import { Star } from "@material-ui/icons";
@@ -7,6 +8,7 @@ import * as styles from "./BackDrop.module.css";
 
 export default function BackDrop({ image, data }) {
   const [disabled, setDisabled] = useState(false);
+  const router = useRouter();
   const addHandler = async () => {
     await axios
       .post("/api/addtolist", {
@@ -16,7 +18,7 @@ export default function BackDrop({ image, data }) {
         setDisabled(true);
       })
       .catch((e) => {
-        console.log(e);
+        router.push('/account/login');
       });
   };
   return (
