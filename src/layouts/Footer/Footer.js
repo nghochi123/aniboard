@@ -8,7 +8,6 @@ export default function Footer() {
   return (
     <Grid
       container
-      spacing={3}
       style={{
         maxWidth: "100vw",
         padding: 50,
