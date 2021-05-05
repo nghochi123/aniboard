@@ -1,0 +1,43 @@
+.container {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  margin: 0 40px 0 20px;
+  cursor: pointer;
+  max-width: 194px;
+}
+
+.image {
+  object-fit: cover;
+  height: 250px;
+  border-radius: 10px;
+  width: 167px;
+  -webkit-box-shadow: 4px 7px 7px -3px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 4px 7px 7px -3px rgba(0, 0, 0, 0.41);
+  box-shadow: 4px 7px 7px -3px rgba(0, 0, 0, 0.41);
+  background-image: url('../../../resources/notfound.jpg');
+}
+
+.tooltip {
+  background-color: #0b1622;
+  min-width: 290px;
+  min-height: 100px;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  margin-left: 18px;
+  left: 100%;
+  top: 5px;
+  pointer-events: none;
+}
+
+.innerText {
+  margin: 1.5rem;
+}
+
+.bottomtext {
+  max-width: 167px;
+}

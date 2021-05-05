@@ -3,7 +3,7 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
-import ScrollCard from "../../medium/ScrollCard/ScrollCard";
+import MyListCard from "../../medium/MyListCard/MyListCard";
 import * as styles from "./MyListPage.module.css";
 
 export default function MyListPage({ data }) {
@@ -22,7 +22,7 @@ export default function MyListPage({ data }) {
         {data.map((item) => (
           <Grid item xs={12} sm={3} md={2}>
             <div style={{ margin: "10px 0" }}>
-              <ScrollCard data={item} />
+              <MyListCard data={item} />
             </div>
           </Grid>
         ))}

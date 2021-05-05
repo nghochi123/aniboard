@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { motion, useCycle } from "framer-motion";
 import { useRouter } from "next/router";
 import {
@@ -6,11 +6,11 @@ import {
   TextField,
   FormControl,
   InputAdornment,
-  Paper,
 } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
 import { MenuToggle } from "../../components/small/MenuToggle/MenuToggle";
 import Drawer from "../../components/medium/Drawer/Drawer";
+import {GlobalStateContext} from '../../context/GlobalContextProvider';
 
 import * as styles from "./Header.module.css";
 
@@ -18,6 +18,7 @@ const Header = (props) => {
   const [search, setSearch] = useState("");
   const router = useRouter();
   const [open, setOpen] = useCycle(false, true);
+  const darkMode = useContext(GlobalStateContext).darkMode;
   const [navEnd, setNavEnd] = useState(
     <Grid
       item
@@ -84,11 +85,9 @@ const Header = (props) => {
       <Grid container spacing={3} style={{ margin: 0 }}>
         <Grid item xs={2} sm={4}>
           <motion.nav initial={false} animate={open ? "open" : "closed"}>
-            <Paper>
-              <motion.div className={styles.background} variants={sidebar}>
-                <Drawer />
-              </motion.div>
-            </Paper>
+            <motion.div className={styles.background} style={{backgroundColor: darkMode ? '#303030' : '#FAFAFA'}} variants={sidebar}>
+              <Drawer />
+            </motion.div>
             <MenuToggle toggle={() => setOpen()} />
           </motion.nav>
         </Grid>
