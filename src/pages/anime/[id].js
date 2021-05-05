@@ -1,17 +1,17 @@
 import React from "react";
 import axios from "axios";
-import Header from '../../layouts/Header/Header';
-import Footer from '../../layouts/Footer/Footer'
+import Header from "../../layouts/Header/Header";
+import Footer from "../../layouts/Footer/Footer";
 import BackDrop from "../../components/medium/BackDrop/BackDrop";
-import PageContent from '../../components/large/PageContentAnime/PageContent';
+import PageContent from "../../components/large/PageContentAnime/PageContent";
 
 export default function Anime({ pageData }) {
   return (
-    <div style={{overflow: 'hidden'}}>
-      <Header/>
-      <BackDrop image={pageData.bannerImage} data={pageData}/>
-      <PageContent data={pageData}/>
-      <Footer/>
+    <div style={{ overflow: "hidden" }}>
+      <Header />
+      <BackDrop image={pageData.bannerImage} data={pageData} />
+      <PageContent data={pageData} />
+      <Footer />
     </div>
   );
 }

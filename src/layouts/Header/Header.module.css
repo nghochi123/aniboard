@@ -19,7 +19,6 @@
   bottom: 0;
   padding-top: 55px;
   width: 300px;
-  background: #aaa;
   box-shadow: 0 0 5px 2px rgba(0,0,0,0.3);
   z-index: 999;
 }

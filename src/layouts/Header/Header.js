@@ -6,6 +6,7 @@ import {
   TextField,
   FormControl,
   InputAdornment,
+  Paper,
 } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
 import { MenuToggle } from "../../components/small/MenuToggle/MenuToggle";
@@ -75,17 +76,19 @@ const Header = (props) => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    if(search.trim() === '') return;
-    router.push(`/search/${search}`)
+    if (search.trim() === "") return;
+    router.push(`/search/${search}`);
   };
   return (
     <header className={styles.header}>
       <Grid container spacing={3} style={{ margin: 0 }}>
         <Grid item xs={2} sm={4}>
           <motion.nav initial={false} animate={open ? "open" : "closed"}>
-            <motion.div className={styles.background} variants={sidebar}>
-              <Drawer />
-            </motion.div>
+            <Paper>
+              <motion.div className={styles.background} variants={sidebar}>
+                <Drawer />
+              </motion.div>
+            </Paper>
             <MenuToggle toggle={() => setOpen()} />
           </motion.nav>
         </Grid>
