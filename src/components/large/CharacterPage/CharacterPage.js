@@ -29,51 +29,34 @@ export default function CharacterPage({ data }) {
               </Typography>
             </div>
             <div className={styles.container}>
-              {data.description.split("\n").map((block) => {
-                const regex = /__.*__/g;
-                block = block.replaceAll('!~', '').replaceAll('~!', '').replaceAll('<i>', '');
-                if (block.match(regex)) {
-                  const slice = block.match(regex)[0];
-                  block = block.replace(slice, "");
-                  const replaced = slice.replaceAll('__', '');
-                  return (
-                    <>
-                      <Typography key={block} variant="body2">
-                        <strong>{replaced}</strong> {block}
-                      </Typography>
-                    </>
-                  );
-                }
-                return (
-                  <>
-                    <Typography
-                      style={{ marginBottom: "20px" }}
-                      key={block}
-                      variant="body2"
-                    >
-                      {block}
-                    </Typography>
-                  </>
-                );
-              })}
+              {data.description
+                ? data.description.split(/[\n]|[_]+/).map((block) => {
+                    return (
+                      <>
+                        <Typography
+                          style={{ marginBottom: "20px" }}
+                          key={block}
+                          variant="body2"
+                        >
+                          {block}
+                        </Typography>
+                      </>
+                    );
+                  })
+                : null}
             </div>
           </div>
         </Grid>
       </Grid>
       {/* End of header */}
-      <div className={styles.container} style={{width: '1200px'}}>
+      <div className={styles.container} style={{ width: "1200px" }}>
         <Typography variant="h5" style={{ marginBottom: "10px" }}>
           Anime
         </Typography>
         <ScrollBar>
           {data.media.edges.map((edge, index) => {
             if (index > 9) return;
-            return (
-              <ScrollCard
-                key={edge.node.title.romaji}
-                data={edge.node}
-              />
-            );
+            return <ScrollCard key={edge.node.title.romaji} data={edge.node} />;
           })}
         </ScrollBar>
       </div>

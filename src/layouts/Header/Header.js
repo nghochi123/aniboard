@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { motion, useCycle } from "framer-motion";
 import { useRouter } from "next/router";
 import {
@@ -6,15 +6,24 @@ import {
   TextField,
   FormControl,
   InputAdornment,
+  Button,
 } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { Search } from "@material-ui/icons";
 import { MenuToggle } from "../../components/small/MenuToggle/MenuToggle";
 import Drawer from "../../components/medium/Drawer/Drawer";
-import {GlobalStateContext} from '../../context/GlobalContextProvider';
-
+import { GlobalStateContext } from "../../context/GlobalContextProvider";
 import * as styles from "./Header.module.css";
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
+}));
 
 const Header = (props) => {
+  const classes = useStyles();
   const [search, setSearch] = useState("");
   const router = useRouter();
   const [open, setOpen] = useCycle(false, true);
@@ -26,8 +35,24 @@ const Header = (props) => {
       sm={4}
       style={{ display: "flex", justifyContent: "flex-end" }}
     >
-      <p className={styles.text}>Sign In</p>
-      <p className={styles.text}>Sign Up</p>
+      <div className={classes.root}>
+        <Button
+          className={styles.text}
+          onClick={() => {
+            router.push("/account/login");
+          }}
+        >
+          Sign In
+        </Button>
+        <Button
+          className={styles.text}
+          onClick={() => {
+            router.push("/account/signup");
+          }}
+        >
+          Sign Up
+        </Button>
+      </div>
     </Grid>
   );
   const sidebar = {
@@ -49,22 +74,6 @@ const Header = (props) => {
       },
     },
   };
-  useEffect(() => {
-    localStorage.setItem("authed", "true");
-    if (localStorage.getItem("authed") === "true") {
-      setNavEnd(
-        <Grid
-          item
-          xs={4}
-          sm={4}
-          style={{ display: "flex", justifyContent: "flex-end" }}
-        >
-          <p className={styles.text}>.</p>
-          <p className={styles.text}>.</p>
-        </Grid>
-      );
-    }
-  }, []);
   const inputProps = {
     startAdornment: (
       <InputAdornment position="start">
@@ -85,7 +94,11 @@ const Header = (props) => {
       <Grid container spacing={3} style={{ margin: 0 }}>
         <Grid item xs={2} sm={4}>
           <motion.nav initial={false} animate={open ? "open" : "closed"}>
-            <motion.div className={styles.background} style={{backgroundColor: darkMode ? '#303030' : '#FAFAFA'}} variants={sidebar}>
+            <motion.div
+              className={styles.background}
+              style={{ backgroundColor: darkMode ? "#303030" : "#FAFAFA" }}
+              variants={sidebar}
+            >
               <Drawer />
             </motion.div>
             <MenuToggle toggle={() => setOpen()} />

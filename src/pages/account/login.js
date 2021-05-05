@@ -105,7 +105,7 @@ const LogIn = ({ users }) => {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="/signup" variant="body2">
+              <Link href="/account/signup" variant="body2">
                 Sign Up
               </Link>
             </Grid>

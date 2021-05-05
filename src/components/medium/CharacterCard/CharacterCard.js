@@ -20,7 +20,7 @@ export default function CharacterCard({ character }) {
       <div className={styles.imagecontainer}>
         <motion.img
           className={styles.image}
-          src={character.voiceActors[0].image.large}
+          src={character.voiceActors[0] ? character.voiceActors[0].image.large : null}
           animate={{ opacity: hover ? 1 : 0 }}
           alt="image"
         />
@@ -34,7 +34,7 @@ export default function CharacterCard({ character }) {
       <div className={styles.text}>
         <Typography variant="body1">{character.node.name.full}</Typography>
         <Typography variant="body1">
-          VA: {character.voiceActors[0].name.full}
+          VA: {character.voiceActors[0] ? character.voiceActors[0].name.full : null}
         </Typography>
       </div>
     </motion.div>

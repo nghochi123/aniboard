@@ -85,16 +85,21 @@ export default function PageContent({ data }) {
             <Typography variant="h5" style={{ marginBottom: "10px" }}>
               Synopsis
             </Typography>
-            {data.description.split("<br>").map((block) => {
-              block = block.replaceAll('!~', '').replaceAll('~!', '').replaceAll('<i>', '').replaceAll('</i>', '');
-              return (
-              <>
-                <Typography key={block} variant="body2">
-                  {block}
-                </Typography>
-                <br />
-              </>
-            )})}
+            {data.description
+              ? data.description.split(/[\n]|[_]+|<i>|<br>|<\/i>|<\/br>|<b>|<\/b>|!~|~!/).map((block) => {
+                return (
+                  <>
+                    <Typography
+                      style={{ marginBottom: "20px" }}
+                      key={block}
+                      variant="body2"
+                    >
+                      {block}
+                    </Typography>
+                  </>
+                );
+                })
+              : null}
           </div>
           <div className={styles.container}>
             <Typography variant="h5" style={{ marginBottom: "10px" }}>

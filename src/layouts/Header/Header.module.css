@@ -7,10 +7,6 @@
   z-index: 1337;
 }
 
-.text {
-  margin: 1rem 1rem 1rem 1rem;
-}
-
 .background {
   position: absolute;
   height: 100vh;
