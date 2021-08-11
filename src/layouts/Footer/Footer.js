@@ -35,16 +35,32 @@ export default function Footer() {
           style={{ cursor: "pointer" }}
         />
         <Typography variant="body2">Built with AniList API</Typography>
-        <IconButton onClick={()=>{window.open('https://nghochi.netlify.app/')}}>
+        <IconButton
+          onClick={() => {
+            window.open("https://nghochi.xyz/");
+          }}
+        >
           <Language />
         </IconButton>
-        <IconButton onClick={()=>{window.open('https://github.com/nghochi123')}}>
+        <IconButton
+          onClick={() => {
+            window.open("https://github.com/nghochi123");
+          }}
+        >
           <GitHub />
         </IconButton>
-        <IconButton onClick={()=>{window.open('https://www.linkedin.com/in/ng-ho-chi-809a881b9/')}}>
+        <IconButton
+          onClick={() => {
+            window.open("https://www.linkedin.com/in/ng-ho-chi-809a881b9/");
+          }}
+        >
           <LinkedIn />
         </IconButton>
-        <IconButton onClick={()=>{window.open('https://github.com/nghochi123/aniboard')}}>
+        <IconButton
+          onClick={() => {
+            window.open("https://github.com/nghochi123/aniboard");
+          }}
+        >
           <Code />
         </IconButton>
       </Grid>
